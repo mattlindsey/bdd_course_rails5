@@ -1,5 +1,8 @@
 <%= link_to "New Article", new_article_path, class: "btn btn-defaul btn-lg", id: "new-article-btn" %>
 
+<% if @articles.empty? %>
+<h1 id="no-articles">No Articles Created</h1>
+<% else %>
 <% @articles.each do |article| %> 
   <div class="well well-lg">
     <div class="article-title">
@@ -9,4 +12,5 @@
       <%= article.body %> 
     </div>
   </div> 
+<% end %>
 <% end %>
